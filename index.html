@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ficha RPG</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <header>
+    <div id="logo">Calcula o tamanho do seu pau</div>
+    <img src="cthulhu.gif" width="200">
+    </nav>
+</header>
+<main role="main">
+    <article>
+        <iframe src="aaa.mp3" allow="autoplay" id="audio" hidden></iframe>
+        <audio id="player" autoplay hidden loop><source src="fodase.mp3" type="audio/mp3"></audio>
+    <h2>Caracteristicas e Rolamentos</h2>
+    <p><label for="idade"> Idade:</label><input id="idade" type="number" name="" min="6" onkeydown=""  readonly> (Idade Minima: <span id="idadeDiv">Role EDU!</span>)</p>
+    <span id="oldAge" hidden>OBS.: Escolha um atributo para ter redução: 
+        <form action="">
+        <input type="radio" name="attr" value="for" onclick="radioSt(this);" checked> FOR
+        <input type="radio" name="attr" value="con" onclick="radioSt(this);"> CON
+        <input type="radio" name="attr" value="des" onclick="radioSt(this);"> DES
+        <input type="radio" name="attr" value="apa" onclick="radioSt(this);"> APA
+        </form>
+        <p> Redução: <span id="oldAgeType">FOR</span>=<span id="oldAgeRed">-1</span></p>
+    </span><br />
+
+    <div>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="FOR">FOR:</label>       
+                </td>
+                <td>
+                    <input type="number" id="FOR" name="" readonly value=0>
+                    <button type="button" onclick="rolarDadoEspecifico(3, 6, 0, 'FOR')">3D6</button>
+                </td>
+                <td>
+                    <label for="DES">DES:</label> 
+                </td>
+                <td>
+                    <input maxlength="4" id="DES" type="number" name="" readonly value=0>
+                    <button type="button" onclick="rolarDadoEspecifico(3, 6, 0, 'DES')">3D6</button>     
+                </td>
+                <td>
+                    <label for="INT">INT:</label>                     
+                </td>
+                <td>                    
+                    <input type="number" id="INT" name="" readonly value=0 >
+                    <button type="button" onclick="rolarDadoEspecifico(2, 6, 6, 'INT')">2D6+6</button>   
+                </td>
+                <td>                  
+                    <label>Ideia:</label> 
+                </td>
+                <td>
+                    <input type="number" id="ideia" name="" readonly value=0> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="CON">CON:</label> 
+                </td>
+                <td> 
+                    <input type="number" id="CON" name="" readonly value=0 >
+                    <button type="button" onclick="rolarDadoEspecifico(3, 6, 0, 'CON')">3D6</button>
+                    
+                </td>
+                <td>
+
+                    <label for="APA">APA:</label>    
+                    
+                </td>
+                <td>
+                    <input type="number" id="APA" name="" readonly value=0 >
+                    <button type="button" onclick="rolarDadoEspecifico(3, 6, 0, 'APA')">3D6</button>
+                    
+                </td>
+                <td>
+
+                    <label for="POD">POD:</label>   
+                    
+                </td>
+                <td>
+                    <input type="number" id="POD" name="" readonly value=0 >
+                    <button type="button" onclick="rolarDadoEspecifico(3, 6, 0, 'POD')">3D6</button>
+                    
+                </td>
+                <td>
+
+                    <label>Sorte:</label> 
+                    
+                </td>
+                <td>
+                    <input type="number" id="sorte" name="" readonly value=0>  
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="TAM">TAM:</label> 
+                    
+                </td>
+                <td>
+                    <input type="number" id="TAM" name="" readonly value=0 >
+                    <button type="button" onclick="rolarDadoEspecifico(2, 6, 6, 'TAM')">2D6+6</button>
+                    
+                </td>
+                <td>
+
+                    <label for="SAN">SAN: </label>
+                    
+                </td>
+                <td> 
+                    <input type="number" id="SAN" name="" readonly value=0 >
+                    
+                </td>
+                <td> 
+                    <label for="EDU">EDU:</label> 
+                    
+                </td>
+                <td>
+                    <input type="number" id="EDU" name="" readonly value=0 >
+                    <button type="button" onclick="rolarDadoEspecifico(3, 6, 3, 'EDU')">3D6+3</button>
+                    
+                </td>
+                <td>
+
+                    <label>Saber:</label> 
+                    
+                </td>
+                <td>
+                    <input type="number" id="saber" name="" readonly value=0>
+                    
+                </td>
+            </tr>
+
+        </table>
+        <p><button type="button" onclick="clearStatus()">Reset</button></p>
+
+        <p><label for="vida"><strong>Pontos de Vida:</strong></label> 
+            <input type="number" id="vida" name="" readonly value=0 ></p>
+        <p><label for="magia"><strong>Pontos de Magia:</strong></label> 
+            <input type="number" id="magia" name="" readonly value=0 ></p>
+        <p><label for="dano"><strong>Bonus de Dano:</strong></label> 
+            <input type="number" id="dano" name="" readonly value=0 ></p>
+
+        <p><label for="renda"><strong>Renda:</strong></label> 
+            <input type="text" id="renda" name="" readonly value=0 >
+            <button type="button" onclick="rolarDadoEspecifico(1, 10, 0,'renda')">1D10</button></p>
+
+        <p><label for="skills"><strong>Pontos de Habilidade:</strong></label> 
+            <input type="number" id="skills" name="" readonly value=0 ></p>
+
+        <p><label for="hobbies"><strong>Pontos de Interesses Pessoais:</strong></label> 
+            <input type="number" id="hobbies" name="" readonly value=0 ></p>
+
+    </article>
+</main>
+<aside>
+    
+</aside>
+<footer>
+    <p>&copy; Meu Ovo</p>
+</footer>
+</body>
+</html>
